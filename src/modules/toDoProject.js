@@ -16,7 +16,7 @@ const createProject = ({ title }) => {
 
   const getProjectInfo = () => ({ title, items });
 
-  return { addItem, getItem, getProjectInfo };
+  return { addItem, removeItem, getItem, getProjectInfo };
 };
 
 export default createProject;
