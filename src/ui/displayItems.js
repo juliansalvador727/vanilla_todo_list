@@ -1,7 +1,6 @@
-// ui.js
-
+// displayItems.js
 const displayItems = (project) => {
-  const container = document.querySelector("#project-preview");
+  const container = document.querySelector("#item-preview");
   container.innerHTML = "";
 
   //   const info = project.getProjectInfo();
@@ -40,5 +39,7 @@ const displayItems = (project) => {
     container.appendChild(itemDiv);
   });
 };
+
+const displayProjects = () => {};
 
 export default displayItems;

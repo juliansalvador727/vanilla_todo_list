@@ -1,8 +1,14 @@
 // index.js
-import "./styles/styles.css";
+
+//logic
 import createItem from "./modules/toDoItem";
 import createProject from "./modules/toDoProject";
-import displayItems from "./modules/ui";
+import projectManager from "./modules/projectManager";
+
+//ui elements
+import displayItems from "./ui/displayItems";
+import displayProjects from "./ui/displayProjects";
+import "./styles/styles.css";
 
 console.log("hello list");
 const newItem = createItem({
@@ -14,12 +20,12 @@ const newItem = createItem({
   checked: true,
 });
 
-console.log(newItem.getInfo());
-
 const newProject = createProject({ title: "test-project" });
-
 newProject.addItem(newItem);
 
 console.log(newProject.getProjectInfo());
 
+projectManager.addProject(newProject);
+
+displayProjects();
 displayItems(newProject);
