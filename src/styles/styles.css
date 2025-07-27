@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: lightblue;
   display: flex;
   flex-direction: column;
 }
@@ -10,10 +10,18 @@ body {
   min-height: calc(100vh - 104px - 48px);
 }
 
+.header {
+  background-color: lightpink;
+}
+
 .nav {
   width: 300px;
   min-width: 250px;
   border: red 1px solid;
+}
+
+.footer {
+  background-color: lightgreen;
 }
 
 .project-preview {
