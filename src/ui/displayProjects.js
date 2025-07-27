@@ -1,5 +1,6 @@
 // displayProjects.js
 import projectManager from "../modules/projectManager.js";
+import displayItems from "./displayItems.js";
 
 const displayProjects = () => {
   const container = document.querySelector("#project-preview");
@@ -21,6 +22,7 @@ const displayProjects = () => {
     viewButton.textContent = "view";
     viewButton.addEventListener("click", (e) => {
       console.log(`Viewing project: ${title}`);
+      displayItems(project);
     });
 
     projectDiv.appendChild(titleElem);

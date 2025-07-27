@@ -40,6 +40,4 @@ const displayItems = (project) => {
   });
 };
 
-const displayProjects = () => {};
-
 export default displayItems;
