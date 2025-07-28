@@ -16,6 +16,13 @@ const projectManager = (() => {
 
   const removeProject = (index) => {
     if (index >= 0 && index < projectList.length) {
+      const project = projectList[index];
+      const { items } = project.getProjectInfo();
+
+      while (items.length > 0) {
+        project.removeItem(0);
+      }
+
       projectList.splice(index, 1);
     }
   };

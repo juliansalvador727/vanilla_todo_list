@@ -20,13 +20,32 @@ const displayProjects = () => {
 
     const viewButton = document.createElement("button");
     viewButton.textContent = "view";
-    viewButton.addEventListener("click", (e) => {
+    viewButton.addEventListener("click", () => {
       console.log(`Viewing project: ${title}`);
       displayItems(project);
     });
 
+    const removeProject = document.createElement("button");
+    removeProject.textContent = "❌";
+    removeProject.addEventListener("click", () => {
+      console.log(`Deleting Project: ${title}`);
+      console.log(`Deleting ${title}'s Items`);
+
+      projectManager.removeProject(index);
+
+      displayProjects();
+      const remainingProjects = projectManager.getAllProjects();
+      if (remainingProjects.length > 0) {
+        displayItems(remainingProjects[0]);
+      } else {
+        container.innerHTML = "";
+        document.querySelector("#item-preview").innerHTML = "";
+      }
+    });
+
     projectDiv.appendChild(titleElem);
     projectDiv.appendChild(viewButton);
+    projectDiv.appendChild(removeProject);
     container.appendChild(projectDiv);
   });
 };

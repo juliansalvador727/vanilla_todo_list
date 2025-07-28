@@ -26,7 +26,7 @@ const displayItems = (project) => {
     const removeElem = document.createElement("button");
     removeElem.textContent = `Remove?`;
     removeElem.id = "remove-button";
-    removeElem.addEventListener("click", (e) => {
+    removeElem.addEventListener("click", () => {
       project.removeItem(index);
       displayItems(project);
     });
